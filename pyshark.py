@@ -157,7 +157,7 @@ class PyShark():
 			return False
 		cur = self.__CON.cursor()
 		cur.execute(QRY_D_LOGIN,(pyLogin.getId(),))
-		con.commit()
+		self.__CON.commit()
 		return True
 	
 	def editLogin(self,pyLogin):
@@ -165,7 +165,7 @@ class PyShark():
 			return False
 		cur = self.__CON.cursor()
 		cur.execute(QRY_U_LOGIN,(pyLogin.getName(),pyLogin.getUsername(),pyLogin.getPassword(),pyLogin.getNotes(),pyLogin.getURL(),pyLogin.getId(),))
-		con.commit()
+		self.__CON.commit()
 		return True
 	
 	def getAll(self):
