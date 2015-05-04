@@ -1,5 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+
+
+
 import unittest
 from pyshark import PyShark,PyLogin
 #i = 0;
@@ -114,6 +117,9 @@ class SharkTester(unittest.TestCase):
 		for to_encrypt in lst :
 			enc = self.pyshark.encrypt(to_encrypt)
 			self.assertEquals(to_encrypt, self.pyshark.decrypt(enc))
+	
+	def test_G_db_password(self):
+		pyshark = PyShark("wrongpassword","pyshark_test.db")
 	
 '''		
 	def test_C_insert_note(self):

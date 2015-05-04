@@ -2,18 +2,18 @@
 # -*- coding: utf-8 -*-
 
 """
-ZetCode Tkinter tutorial
+PySharkGui beta
 
-In this script, we use the grid
-manager to create a more complicated
-layout.
+This script create a simple tkinter GUI
+to manage accounts and passwords using PyShark module
 
-author: Jan Bodnar
-last modified: December 2010
-website: www.zetcode.com
+authors: tabuto83
+last modified: May 2015
+website: 
 """
 
 #from Tkinter import Tk, Text, BOTH, W, N, E, S
+from pyshark import PyShark
 from ttk import Frame, Button, Label, Style
 import Tkinter
 from Tkinter import *
@@ -34,6 +34,7 @@ class PySharkGui(Frame):
         self.initUI()
         
         self._selectedLogin=None
+        self.pyshark = PyShark("tester123067","pyshark_test.db")
         logging.debug("Start PySharkGui")
     
     def showLogin(self):
